@@ -27,5 +27,5 @@ dist-ssr
 .env
 
 # Ignorar el archivo donde tengo los datos de los usuarios de prueba
-*.sql
+*insercion_datos.sql
 insercion_user_pass.js

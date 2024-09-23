@@ -10,7 +10,7 @@ function Ranking() {
     const [showFriends, setShowFriends] = useState(false); // Estado para controlar la vista de rankings de amigos o general
 
     const userId = localStorage.getItem('userId'); // Obtener el userId del localStorage
-    console.log('UserId:', userId); //Comprueba que se pase bien el user logeado
+    console.log('userId:', userId); //Comprueba que se pase bien el user logeado
     const nombreUsuario = localStorage.getItem('nombreUsuario');
     const navigate = useNavigate();
 

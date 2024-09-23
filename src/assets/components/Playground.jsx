@@ -56,6 +56,14 @@ function Playground () {
           } else {
             setError(data.error || 'Introduce un usuario y contraseña validos');
           }
+          if (data && data.userId) { // Comprobación de que se devuelve userId
+            localStorage.setItem('authToken', data.token);
+            localStorage.setItem('nombreUsuario', data.nombreUsuario);
+            localStorage.setItem('userId', data.userId);  
+            navigate('/seleccion');
+        } else {
+            setError('No se pudo obtener el ID de usuario');
+        }
         } catch (error) {
           setError('Error en la conexión con el servidor');
         }

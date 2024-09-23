@@ -47,7 +47,7 @@ app.post('/playground', (req, res) => {
         success: true,
         message: 'Login correcto',
         nombreUsuario: user.usuario,
-        userId: user.id
+        userId: user.usuario
       });
     } else {
       res.status(401).json({ error: 'Usuario o password incorrectos' });
@@ -99,37 +99,42 @@ app.get('/rankings/friends/:userId', (req, res) => {
   const userId = req.params.userId;
 
   const query = `
-    SELECT c.usuario, c.ejercicio, c.repeticiones
-    FROM cuenta c
-    JOIN friends f ON f.friend_usuario = c.usuario
-    WHERE f.user_usuario = ? AND f.status = 'accepted'
-    ORDER BY c.repeticiones DESC;
-  `;
+  SELECT c.usuario, c.ejercicio, c.repeticiones
+  FROM cuenta c
+  JOIN friends f ON f.friend_usuario = c.usuario
+  WHERE f.user_usuario = ? AND f.status = 'accepted'
+  UNION
+  SELECT usuario, ejercicio, repeticiones
+  FROM cuenta
+  WHERE usuario = ?
+  ORDER BY repeticiones DESC;
+`;
 
-  connection.query(query, [userId], (err, results) => {
-    if (err) {
-      console.error('Error al obtener el ranking de amigos', err);
-      res.status(500).json({ error: 'Error del servidor al obtener el ranking de amigos' });
-      return;
+// Ejecutar la consulta con el userId pasado dos veces, para los amigos y para el usuario actual
+connection.query(query, [userId, userId], (err, results) => {
+  if (err) {
+    console.error('Error al obtener el ranking de amigos y propios', err);
+    res.status(500).json({ error: 'Error del servidor al obtener el ranking de amigos y propios' });
+    return;
+  }
+
+  console.log('Resultados de la consulta:', results);
+
+  // Agrupar resultados por ejercicio
+  const rankings = results.reduce((acc, row) => {
+    if (!acc[row.ejercicio]) {
+      acc[row.ejercicio] = [];
     }
+    acc[row.ejercicio].push({
+      usuario: row.usuario,
+      repeticiones: row.repeticiones
+    });
+    return acc;
+  }, {});
 
-    console.log('Resultados de la consulta:', results);
-
-    // Agrupar resultados por ejercicio
-    const rankings = results.reduce((acc, row) => {
-      if (!acc[row.ejercicio]) {
-        acc[row.ejercicio] = [];
-      }
-      acc[row.ejercicio].push({
-        usuario: row.usuario,
-        repeticiones: row.repeticiones
-      });
-      return acc;
-    }, {});
-
-    console.log('Rankings agrupados:', rankings);
-    res.json(rankings);
-  });
+  console.log('Rankings agrupados:', rankings);
+  res.json(rankings);
+});
 });
 
 

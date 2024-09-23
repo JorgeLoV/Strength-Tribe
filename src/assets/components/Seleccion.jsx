@@ -14,6 +14,7 @@ function Seleccion() {
     const handleLogout = () => {
         localStorage.removeItem('authToken'); // Borra  token de autenticación
         localStorage.removeItem('nombreUsuario'); // Borra nombre de user
+        localStorage.removeItem('userId')   // Asegurare de que borra el login
         navigate('/playground');    // Lleva de vuelta a Playground
     };
 

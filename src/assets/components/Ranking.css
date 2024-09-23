@@ -1,0 +1,101 @@
+.body-rank{
+    background-color: grey;
+    position: absolute;
+    width: 100%;
+    height: 270%;
+    top: 0;
+    left: 0;
+}
+
+.boton-atras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 55rem;
+}
+
+.boton-atras a{
+    background-color: none;
+    border-radius: 50%;
+}
+
+.rank-container{
+    margin-bottom: 4rem;
+}
+
+.listado{
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    padding-left: 1.5rem;    
+}
+
+.nombre-ranking{
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.toggle-button{
+    background-color: #48E045;
+    color: white;
+}
+
+@media (min-width: 600px) and (max-width: 1024px){
+
+.body-rank{
+    background-color: black;
+}
+
+.boton-atras{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-right: 20rem;
+}
+
+.nombre-ranking h2 {
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem; /* Ajusta el tamaño del h2 en pantallas pequeñas */
+}
+
+.rank-container {
+    margin-bottom: 2rem; /* Reduce el margen inferior para pantallas pequeñas */
+}
+
+}
+
+@media (max-width: 600px){
+
+.body-rank{
+    background-color: black;
+}
+
+.boton-atras{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-right: 8rem;
+}
+
+.nombre-ranking h2 {
+    font-size: 1.5rem; /* Ajusta el tamaño del h2 en pantallas pequeñas */
+    font-family: "Varela Round", sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.rank-container {
+    margin-bottom: 2rem; /* Reduce el margen inferior para pantallas pequeñas */
+}
+
+}

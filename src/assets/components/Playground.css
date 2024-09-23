@@ -1,0 +1,115 @@
+.body-play{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/fondo_playground.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    padding-right: 7rem;
+    font-size: 30px;
+    font-family: "Varela Round", sans-serif;
+}
+
+.header a{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+.header a:hover{
+    color: #48E045;
+    transition: ease-in-out .4s;
+}
+
+.login-container{
+    padding-top: 6rem;
+    width: 100%;
+}
+
+.reto{
+    display: flex;
+    justify-content: center;
+    font-family: "Varela Round", sans-serif;
+}
+
+.login-input{
+    background: white;
+    border-radius: 5%;
+    margin-bottom: .5rem;
+    height: 30px;
+    width: 300px;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: black;
+}
+
+input:focus, input:valid{
+    color: black;
+    border: 3px solid #48E045;
+}
+
+.login-submit{
+    margin-top: 1.5rem;
+    background-color: #48E045;
+    width: 100px;
+    height: 50px;
+}
+
+.login-submit {
+    color: white;
+    font-family: "Varela Round", sans-serif;
+    font-size: larger;
+}
+
+.login-submit:hover{
+    background-color: black;
+    transition: ease-in-out .3s;
+    color: #48E045;
+    border: none;
+}
+
+.login-submit a:hover{
+    color: #48E045;
+}
+
+.registro{
+    padding-top: 1.5rem;
+}
+
+.registro a{
+    color: white;
+}
+
+.registro a:hover{
+    transition: ease-in-out .2s;
+    color: #48E045;
+}
+
+@media (max-width: 600px){
+
+.header .links a {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-top: 5rem;
+    z-index: 15;
+}
+
+
+
+}

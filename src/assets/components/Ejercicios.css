@@ -1,0 +1,299 @@
+.body-ejer{
+    background-color: grey;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 225%;
+}
+
+.texto-entrada{
+    display: block;
+    color: white;  
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: "Varela Round", sans-serif;
+}
+
+.titular{
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    align-items: center;
+    font-family: "Varela Round", sans-serif;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.entradilla{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.descripcion {
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.header{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    padding-right: 7rem;
+    font-size: 30px;
+    font-family: "Varela Round", sans-serif;
+}
+
+.header a{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
+    text-decoration: none;
+    color: white;
+}
+
+.header a:hover{
+    color: #48E045;
+    transition: ease-in-out .4s;
+}
+
+.footer{
+    width: 100%;
+    background-color: #48E045;
+    justify-content: space-around;
+    padding-top: 1.5rem;
+    margin-top: 5.3rem;
+}
+
+
+.card {
+  perspective: 1000px;
+  width: 250px;
+  height: 350px;
+  margin: 20px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: white;
+}
+
+.card-back {
+  background-color: #f1f1f1;
+  transform: rotateY(180deg);
+}
+
+.card img {
+  width: 100%;
+  height: 70%;
+}
+
+.card-back .titulo {
+  margin-top: 10px;
+}
+
+.slick-slide {
+    padding: 0 1.5rem;  
+  }
+
+.slick-slider {
+  margin: 0 2.5rem;
+}
+  
+.slick-list {
+    margin: 0 -1.5rem; 
+  }
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 15;
+}
+
+.menu-icon .bar {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.menu-icon .bar.open:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.menu-icon .bar.open:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon .bar.open:nth-child(3) {
+    transform: rotate(45deg) translate(-9px, -6px);
+}
+
+
+@media (max-width: 600px){
+
+  .body-ejer{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+  }
+
+  .texto-entrada {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .header .links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  
+  .header .links.active {
+    display: flex;
+  }
+  
+  .menu-icon {
+    display: flex;
+    z-index: 16;
+  }
+  
+  .header .links a {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-top: 5rem;
+    z-index: 15;
+  }
+
+.slick-slide {
+  padding: 0;
+  margin: 0;
+}
+
+  .slick-slider {
+    z-index: 1;
+    margin: 0 2rem;
+  }
+
+}
+
+.botón-modal{
+  background-color: #48E045;
+  color: white;
+}
+
+.botón-modal:hover{
+  transition: ease-in-out .3s;
+  background-color: black;
+  color: #48E045;
+}
+
+    
+@media (min-width: 600px) and (max-width: 1024px){
+
+  .body-ejer{
+    background-color: black;
+    width: 100%;
+    height: 187%;
+  }
+
+  .texto-entrada{
+    display: none;
+  }
+  
+  .header .links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  
+  .header .links.active {
+    display: flex;
+  }
+  
+  .menu-icon {
+    display: flex;
+    z-index: 16;
+  }
+  
+  .header .links a {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-top: 5rem;
+    z-index: 15;
+  }
+
+  .slick-slider {
+    z-index: 1;
+    margin: 0 0;
+  }
+
+  .slick-slide {
+    padding: 0.5rem;
+    margin: 0;
+  }
+ 
+}

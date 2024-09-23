@@ -1,0 +1,127 @@
+.body-nuevo{
+    background-color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105%;
+}
+
+.boton-atras a:hover{
+    transition: ease-in-out .3s;
+    color: #48E045;
+}
+
+.texto-logout{
+    color: white;
+}
+
+.logout{
+    background-color: transparent;   
+}
+
+.logout:hover{
+    background-color: white;
+    transition: ease-in-out .3s;
+}
+
+h2{
+    font-family: "Varela Round", sans-serif;
+    font-style: italic;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5rem;
+    margin-left: 40%;
+    color: white;
+}
+
+.selector{
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+select{
+    margin-left: 1.5rem;
+}
+
+.repeticiones-container,
+.tiempo-container,
+.detalles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.repeticiones-container input, .tiempo-container input{
+    background: white;
+    border-radius: 5%;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    height: 40px;
+    width: 50px;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+}
+
+input:focus{
+    color: black;
+    border: 3px solid #48E045;
+}
+
+textarea{
+    margin-left: 1.5rem;
+    resize: both;
+    min-width: 200px;
+    max-width: 350px;
+    min-height: 50px;
+    max-height: 200px;
+    outline: none;
+}
+
+.boton-reto{
+    background-color: #48E045;
+    color: white;
+    margin-top: 2rem;
+}
+
+.boton-reto:hover{
+    background-color: white;
+    transition: ease-in-out .3s;
+    color: black;
+}
+
+@media (max-width: 600px){
+ 
+.body-nuevo{
+    background-color: black;
+    height: 105%;
+}
+
+h2{
+    display: none;
+}
+
+}
+
+@media (min-width: 600px) and (max-width: 1024px){
+
+.body-nuevo{
+    background-color: black;
+}
+
+h2{
+    display: none;
+}
+
+}
